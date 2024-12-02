@@ -3,7 +3,7 @@ import { getMentions } from '../services/twitterService.js';
 export const handleMentions = async () => {
   try {
     let mentions = await getMentions();
-    // mentions = await validateMentions(mentions);
+    mentions = await validateMentions(mentions);
     // mentions = await scoreMentions(mentions);
     // mentions = await sortMentions(mentions);
 
