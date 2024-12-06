@@ -1,11 +1,11 @@
-import { getMentions } from '../services/twitterService.js';
+import { getMentions, validateMentions, scoreMentions, sortMentions } from '../services/twitterService.js';
 
 export const handleMentions = async () => {
   try {
     let mentions = await getMentions();
     mentions = await validateMentions(mentions);
-    // mentions = await scoreMentions(mentions);
-    // mentions = await sortMentions(mentions);
+    mentions = await scoreMentions(mentions);
+    mentions = await sortMentions(mentions);
 
     if (mentions[0]) {
       // TODO: generate pet details and reply

@@ -1,3 +1,5 @@
+import { MIN_LIKES, MIN_RETWEETS, MIN_REPLIES } from '../config/env.js'
+
 export const isValidFormat = (text) => {
   const contextMatch = text.match(/Context:\s*(.+)/i);
   if (!contextMatch) return false;
