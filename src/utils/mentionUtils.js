@@ -12,4 +12,6 @@ export const scoreMentions = async (mentions) => {
   }));
 };
 
-export const sortMentions = async (mentions) => mentions.sort((a, b) => b.score - a.score);
+export const sortMentions = async (mentions) => {
+  mentions.sort((a, b) => b.score - a.score);
+}

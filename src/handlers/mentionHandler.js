@@ -1,4 +1,6 @@
-import { getMentions, validateMentions, scoreMentions, sortMentions } from '../services/twitterService.js';
+import { getMentions } from '../services/twitterService.js';
+import { validateMentions, scoreMentions, sortMentions } from '../utils/mentionUtils.js';
+import { getContext } from '../utils/responseUtils.js';
 
 export const handleMentions = async () => {
   try {
@@ -8,7 +10,7 @@ export const handleMentions = async () => {
     mentions = await sortMentions(mentions);
 
     if (mentions[0]) {
-      // TODO: generate pet details and reply
+      const context = await getContext(mentions[0].text);
       console.log("Mention found.");
     } else {
       console.log("Mention not found.");
