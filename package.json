@@ -1,14 +1,37 @@
 {
-    "name": "crypto_fur",
-    "version": "1.0.0",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-      "start": "node src/index.js"
-    },
-    "dependencies": {
-      "dotenv": "^16.4.5",
-      "twitter-api-v2": "^1.18.2"
-    }
+  "name": "crypto-fur-ai",
+  "type": "module",
+  "imports": {
+    "#src/*": "./src/*"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js --watch src",
+    "inspect": "node --inspect src/index.js",
+    "lint": "eslint \"**/*.js\" --config ./eslint.config.mjs",
+    "format": "prettier --write \"./src/**/*.js\""
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2"
+  },
+  "engines": {
+    "node": "23.3.0"
+  },
+  "dependencies": {
+    "@elizaos/adapter-sqlite": "^0.1.7",
+    "@elizaos/core": "^0.1.7",
+    "@tavily/core": "^0.0.2",
+    "agent-twitter-client": "^0.0.18",
+    "better-sqlite3": "^11.7.2",
+    "cron-parser": "^4.9.0",
+    "dotenv": "^16.4.7",
+    "sharp": "^0.33.5"
   }
-  
+}

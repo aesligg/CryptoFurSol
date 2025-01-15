@@ -1,3 +1,3 @@
-import { handleMentions } from './handlers/mentionHandler.js';
+import { startAgent } from "#src/agent/index.js";
 
-handleMentions();
+startAgent().catch(console.error);
